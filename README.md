@@ -1,5 +1,7 @@
 # local-storage-poorlyfill
 
+[![Build Status](https://travis-ci.org/patkub/local-storage-poorlyfill.svg?branch=master)](https://travis-ci.org/patkub/local-storage-poorlyfill)
+
 in-memory polyfill for local storage
 
 ### Why?
