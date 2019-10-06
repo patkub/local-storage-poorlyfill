@@ -1,0 +1,42 @@
+{
+  "name": "local-storage-poorlyfill",
+  "version": "1.0.0",
+  "description": "in-memory polyfill for local storage",
+  "main": "\"\"",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patkub/local-storage-poorlyfill.git"
+  },
+  "keywords": [
+    "local",
+    "storage",
+    "polyfill"
+  ],
+  "author": "Patrick Kubiak <pk9948@rit.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patkub/local-storage-poorlyfill/issues"
+  },
+  "homepage": "https://github.com/patkub/local-storage-poorlyfill#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-include": "^2.4.1",
+    "gulp-rename": "^1.4.0",
+    "karma": "^4.3.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-firefox-launcher": "^1.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-sinon": "^1.0.5",
+    "mocha": "^6.2.1",
+    "sinon": "^7.5.0"
+  }
+}

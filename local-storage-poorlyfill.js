@@ -24,6 +24,45 @@
 'use strict';
 
 (function () {
+    // object for internal methods
+    var __localStorage = new Object();
+
+    // internal object to hold data
+    var _storage = new Object();
+
+    /**
+     * @param key key to item
+     * @param {String} value key's value
+     */
+    __localStorage.setItem = function(key, value) {
+        _storage[key] = String(value);
+    }
+
+    /**
+     * @return item or null if it does not exist
+     */
+    __localStorage.getItem = function(key) {
+        if (_storage.hasOwnProperty(key)) {
+            return _storage[key];
+        }
+        return null;
+    }
+
+    /**
+     * @return undefined
+     */
+    __localStorage.removeItem = function(key) {
+        if (_storage.hasOwnProperty(key)) {
+            delete _storage[key];
+        }
+    }
+
+    /**
+     * @return undefined
+     */
+    __localStorage.clear = function() {
+        _storage = new Object();
+    }
 
     if (_isSupported()) {
         // use browser's implementation
@@ -31,47 +70,6 @@
         window._localStorage = window.localStorage;
     } else {
         // mirror functionality with an object
-
-        // internal object to hold data
-        var _storage = new Object();
-
-        // object for internal methods
-        var __localStorage = new Object();
-
-        /**
-         * @param key key to item
-         * @param {String} value key's value
-         */
-        __localStorage.setItem = function(key, value) {
-            _storage[key] = String(value);
-        }
-
-        /**
-         * @return item or null if it does not exist
-         */
-        __localStorage.getItem = function(key) {
-            if (_storage.hasOwnProperty(key)) {
-                return _storage[key];
-            }
-            return null;
-        }
-
-        /**
-         * @return undefined
-         */
-        __localStorage.removeItem = function(key) {
-            if (_storage.hasOwnProperty(key)) {
-                delete _storage[key];
-            }
-        }
-
-        /**
-         * @return undefined
-         */
-        __localStorage.clear = function() {
-            _storage = new Object();
-        }
-
         // cannot overwrite window.localStorage
         window._localStorage = __localStorage;
     }
@@ -101,7 +99,11 @@
 
         return supported;
     }
-
+    
+    // export
+    __localStorage._isSupported = _isSupported;
+    __localStorage._storage = _storage;
+    window.__localStorage = __localStorage;
 })();
 
 // cannot overwrite window.localStorage

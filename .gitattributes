@@ -1,0 +1,2 @@
+# Catch all for anything we forgot. Add rules if you get CRLF -> LF warnings.
+* eol=lf
