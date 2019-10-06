@@ -28,22 +28,22 @@
     var __localStorage = new Object();
 
     // internal object to hold data
-    var _storage = new Object();
+    __localStorage._storage = new Object();
 
     /**
      * @param key key to item
      * @param {String} value key's value
      */
     __localStorage.setItem = function(key, value) {
-        _storage[key] = String(value);
+        __localStorage._storage[key] = String(value);
     }
 
     /**
      * @return item or null if it does not exist
      */
     __localStorage.getItem = function(key) {
-        if (_storage.hasOwnProperty(key)) {
-            return _storage[key];
+        if (__localStorage._storage.hasOwnProperty(key)) {
+            return __localStorage._storage[key];
         }
         return null;
     }
@@ -52,16 +52,17 @@
      * @return undefined
      */
     __localStorage.removeItem = function(key) {
-        if (_storage.hasOwnProperty(key)) {
-            delete _storage[key];
+        if (__localStorage._storage.hasOwnProperty(key)) {
+            delete __localStorage._storage[key];
         }
+        return undefined;
     }
 
     /**
      * @return undefined
      */
     __localStorage.clear = function() {
-        _storage = new Object();
+        __localStorage._storage = new Object();
     }
 
     if (_isSupported()) {
@@ -71,6 +72,7 @@
     } else {
         // mirror functionality with an object
         // cannot overwrite window.localStorage
+        /* istanbul ignore next */
         window._localStorage = __localStorage;
     }
 
@@ -102,7 +104,6 @@
     
     // export
     __localStorage._isSupported = _isSupported;
-    __localStorage._storage = _storage;
     window.__localStorage = __localStorage;
 })();
 
