@@ -18,7 +18,7 @@ describe('localStorage poorlyfill', function() {
       });
       
       it('should return false', function() {
-        assert.equal(window.__localStorage._isSupported(), false);
+        assert.isFalse(window.__localStorage._isSupported(), 'not supported');
       });
     });
     
@@ -36,7 +36,7 @@ describe('localStorage poorlyfill', function() {
       });
       
       it('should return false', function() {
-        assert.equal(window.__localStorage._isSupported(), false);
+        assert.isFalse(window.__localStorage._isSupported(), 'not supported');
       });
     });
   });
