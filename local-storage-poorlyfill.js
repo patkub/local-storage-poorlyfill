@@ -86,10 +86,8 @@
 
         try {
             // check if the browser allows access to local storage
-            window.localStorage;
-
-            // it should be an object
-            if (!(typeof window.localStorage === "object")) {
+            // it should be truthy, and it should be an object
+            if (!window.localStorage || !(typeof window.localStorage === "object")) {
                 supported = false;
             }
         } catch (e) {
