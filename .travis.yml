@@ -19,5 +19,6 @@ script:
   - npx standard
   - yarn test
 after_success:
+  - codecov
   - npx semantic-release
   
