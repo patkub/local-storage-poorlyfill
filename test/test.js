@@ -95,6 +95,23 @@ describe('localStorage poorlyfill', function () {
       })
     })
 
+    context('when using window.localStorage throws Unspecified error', function () {
+      before(function () {
+        // localStorage is disabled
+        sandbox.replaceGetter(window, 'localStorage', function () {
+          throw new Error()
+        })
+      })
+
+      after(function () {
+        sandbox.restore()
+      })
+
+      it('should return false', function () {
+        assert.isFalse(window.__localStorage._isSupported(), 'not supported')
+      })
+    })
+
     context('when window.localStorage is not an object', function () {
       before(function () {
         // localStorage is disabled

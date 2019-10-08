@@ -20,8 +20,6 @@
  *
  */
 
-/* global DOMException */
-
 // strict mode
 'use strict';
 
@@ -98,11 +96,9 @@
         supported = false
       }
     } catch (e) {
-      /* istanbul ignore next */
-      if (e instanceof DOMException) {
-        // access is denied for this document
-        supported = false
-      }
+      // chrome throws DOMException
+      // edge throws Unspecified error
+      supported = false
     }
 
     return supported

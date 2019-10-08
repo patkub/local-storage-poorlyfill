@@ -5,6 +5,7 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
+  firefox: latest
 language: node_js
 node_js:
   - "node"
