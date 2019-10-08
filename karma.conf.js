@@ -32,7 +32,10 @@ module.exports = function (config) {
     reporters: ['progress', 'coverage'],
 
     coverageReporter: {
-      type: 'text'
+      reporters: [
+        { type: 'text' },
+        { type: 'html' }
+      ]
     },
 
     // web server port
