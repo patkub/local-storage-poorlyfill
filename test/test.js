@@ -118,8 +118,7 @@ describe('localStorage poorlyfill', function () {
 
       before(function () {
         // localStorage is enabled
-        sandbox.replaceGetter(window, 'localStorage', function () {
-          /* istanbul ignore next */
+        sandbox.replaceGetter(window, 'localStorage', /* istanbul ignore next */ function () {
           return true
         })
       })
@@ -138,8 +137,7 @@ describe('localStorage poorlyfill', function () {
 
       before(function () {
         // localStorage is disabled
-        sandbox.replaceGetter(window, 'localStorage', function () {
-          /* istanbul ignore next */
+        sandbox.replaceGetter(window, 'localStorage', /* istanbul ignore next */ function () {
           return false
         })
       })
