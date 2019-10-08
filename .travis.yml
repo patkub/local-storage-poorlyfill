@@ -9,6 +9,9 @@ addons:
 language: node_js
 node_js:
   - "node"
+before_install:
+  - google-chrome --version
+  - firefox --version
 install:
   - yarn install
 before_script:
