@@ -80,7 +80,6 @@
   } else {
     // mirror functionality with an object
     // cannot overwrite window.localStorage
-    /* istanbul ignore next */
     window._localStorage = __localStorage
   }
 
