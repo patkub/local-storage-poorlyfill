@@ -15,7 +15,13 @@ Add to your project:
 
 ### Why?
 
-- IE does not have support for local storage
+- For local files, IE and Edge do not have support for local storage
+
+- local storage can be disabled
+
+### Tested browsers
+
+- Chrome, Firefox, Internet Explorer, Edge, Safari and Opera
 
 ### Implementation details
 

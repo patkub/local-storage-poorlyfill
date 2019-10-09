@@ -6,6 +6,7 @@
  *
  * Why?
  * - IE does not have support for local storage
+ * - local storage can be disabled
  *
  * Implementation details:
  * - Use browser's native implementation if supported
@@ -92,11 +93,13 @@
     try {
       // check if the browser allows access to local storage
       // it should be truthy, and it should be an object
+      // ie window.localStorage is undefined
       if (!window.localStorage || !(typeof window.localStorage === 'object')) {
         supported = false
       }
     } catch (e) {
-      // chrome throws DOMException
+      // chrome and opera throw DOMException
+      // safari throws SecurityError
       // edge throws Unspecified error
       supported = false
     }
