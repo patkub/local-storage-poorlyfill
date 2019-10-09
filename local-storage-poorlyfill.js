@@ -5,7 +5,7 @@
  * @author Patrick Kubiak <pk9948@rit.edu>
  *
  * Why?
- * - IE does not have support for local storage
+ * - For local files, IE and Edge do not have support for local storage
  * - local storage can be disabled
  *
  * Implementation details:
