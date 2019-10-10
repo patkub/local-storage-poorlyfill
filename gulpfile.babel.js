@@ -1,9 +1,9 @@
-const path = require('path')
-const { src, dest, series } = require('gulp')
-const rollup = require('gulp-rollup')
-const babel = require('gulp-babel')
-const header = require('gulp-header')
-const Server = require('karma').Server
+import { src, dest, series } from 'gulp'
+import rollup from 'gulp-rollup'
+import babel from 'gulp-babel'
+import header from 'gulp-header'
+import path from 'path'
+import { Server } from 'karma'
 
 const headerTxt =
 `/**

@@ -14,6 +14,11 @@
     "test": "gulp runTests",
     "semantic-release": "semantic-release"
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/patkub/local-storage-poorlyfill.git"
@@ -31,10 +36,13 @@
   "homepage": "https://github.com/patkub/local-storage-poorlyfill#readme",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.6.3",
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
     "chai": "^4.2.0",
     "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-babel": "^8.0.0",
     "gulp-header": "^2.0.9",
     "gulp-rollup": "^2.16.2",
     "karma": "^4.3.0",
