@@ -10,6 +10,7 @@
   },
   "scripts": {
     "lint": "standard",
+    "build": "gulp transpile",
     "test": "gulp runTests",
     "semantic-release": "semantic-release"
   },

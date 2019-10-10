@@ -49,6 +49,11 @@ Lint with standard:
 yarn lint
 ```
 
+Transpile with babel:
+```
+yarn build
+```
+
 Run unit tests:
 ```
 yarn test
