@@ -13,6 +13,13 @@ Add to your project:
 
 `npm i local-storage-poorlyfill`
 
+```html
+<script type="text/javascript" src="node_modules/local-storage-poorlyfill/dist/local-storage-poorlyfill.js"></script>
+<script>
+// use _localStorage
+</script>
+```
+
 ### Why?
 
 - For local files, IE and Edge do not have support for local storage

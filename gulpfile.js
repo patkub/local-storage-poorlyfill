@@ -1,20 +1,73 @@
 const path = require('path')
 const { src, dest, series } = require('gulp')
-const include = require('gulp-include')
-const rename = require('gulp-rename')
+const rollup = require('gulp-rollup')
+const babel = require('gulp-babel')
+const header = require('gulp-header')
 const Server = require('karma').Server
 
-/**
- * Combine polyfill and tests into ./test/test-all.js
+const headerTxt =
+`/**
+ *
+ * Partial local storage polyfill
+ *
+ * @author Patrick Kubiak <pk9948@rit.edu>
+ *
+ * Why?
+ * - For local files, IE and Edge do not have support for local storage
+ * - local storage can be disabled
+ *
+ * Implementation details:
+ * - Use browser's native implementation if supported
+ * - Mirror native functionality with an object
+ *
+ * Implementation flaws:
+ * - Not persistent
+ * - Need to use _localStorage instead of localStorage
+ *
+ * Use _localStorage or window._localStorage instead of localStorage or window.localStorage
+ * because the browser prevents using localStorage or window.localStorage if access is denied for this document
+ *
  */
-function combine () {
-  return src('./test/test.js')
-    .pipe(include())
-    .on('error', console.log)
-    .pipe(rename({
-      suffix: '-all'
+
+`
+
+/**
+ * Babel transpile for dist
+ */
+function transpile () {
+  return src('./src/**/*.js')
+    .pipe(rollup({
+      input: './src/local-storage-poorlyfill.js',
+      output: {
+        format: 'iife'
+      },
+      plugins: [
+        babel({
+          presets: ['@babel/env']
+        })
+      ]
     }))
-    .pipe(dest('./test/'))
+    .pipe(header(headerTxt))
+    .pipe(dest('./dist/'))
+}
+
+/**
+ * Babel transpile for tests
+ */
+function transpileTests () {
+  return src(['./src/**/*.js', './test/**/*.js'])
+    .pipe(rollup({
+      input: './test/test.js',
+      output: {
+        format: 'iife'
+      },
+      plugins: [
+        babel({
+          presets: ['@babel/env']
+        })
+      ]
+    }))
+    .pipe(dest('./dist/'))
 }
 
 /**
@@ -27,9 +80,14 @@ function test (done) {
   }, done()).start()
 }
 
-const runTests = series(combine, test)
+/**
+ * Transpile and run tests
+ */
+const runTests = series(transpileTests, test)
 
-exports.combine = combine
+// export
+exports.transpile = transpile
+exports.transpileTests = transpileTests
 exports.test = test
 exports.runTests = runTests
 exports.default = runTests
