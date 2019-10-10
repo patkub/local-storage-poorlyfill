@@ -2,7 +2,7 @@
   "name": "local-storage-poorlyfill",
   "version": "0.0.0-development",
   "description": "in-memory polyfill for local storage",
-  "main": "src/local-storage-poorlyfill.js",
+  "main": "dist/local-storage-poorlyfill.js",
   "directories": {
     "dist": "dist",
     "src": "src",
