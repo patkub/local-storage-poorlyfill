@@ -50,6 +50,7 @@ const _isSupported = function () {
   try {
     // check if the browser allows access to local storage
     // it should be truthy, and it should be an object
+    // firefox window.localStorage is null if dom.storage.enabled is set to false
     // ie window.localStorage is undefined
     if (!window.localStorage || !(typeof window.localStorage === 'object')) {
       supported = false
