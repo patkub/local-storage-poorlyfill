@@ -54,7 +54,7 @@
     "karma-sinon": "^1.0.5",
     "mocha": "^6.2.1",
     "semantic-release": "^15.13.24",
-    "sinon": "^7.5.0",
+    "sinon": "^8.0.0",
     "standard": "^14.3.1"
   }
 }
