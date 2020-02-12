@@ -6,6 +6,8 @@ language: node_js
 node_js:
   - "node"
 before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 2
+  - export PATH="$HOME/.yarn/bin:$PATH"
   - google-chrome --version
   - firefox --version
 install:
@@ -21,4 +23,3 @@ script:
   - yarn test
 after_success:
   - npx semantic-release
-  
