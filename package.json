@@ -34,7 +34,6 @@
     "url": "https://github.com/patkub/local-storage-poorlyfill/issues"
   },
   "homepage": "https://github.com/patkub/local-storage-poorlyfill#readme",
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",

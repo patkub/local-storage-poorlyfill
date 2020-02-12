@@ -101,3 +101,10 @@ public
 .tern-port
 
 dist
+
+# yarn 2, not using Zero-Installs
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/releases
+.pnp.*
