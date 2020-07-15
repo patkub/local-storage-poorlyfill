@@ -1,7 +1,7 @@
 # local-storage-poorlyfill
 
 [![Build Status](https://travis-ci.org/patkub/local-storage-poorlyfill.svg?branch=master)](https://travis-ci.org/patkub/local-storage-poorlyfill)
-[![Greenkeeper badge](https://badges.greenkeeper.io/patkub/local-storage-poorlyfill.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/github/patkub/local-storage-poorlyfill/badge.svg?targetFile=package.json)](https://snyk.io/test/github/patkub/local-storage-poorlyfill?targetFile=package.json)
 [![dependencies Status](https://david-dm.org/patkub/local-storage-poorlyfill/status.svg)](https://david-dm.org/patkub/local-storage-poorlyfill)
 [![devDependencies Status](https://david-dm.org/patkub/local-storage-poorlyfill/dev-status.svg)](https://david-dm.org/patkub/local-storage-poorlyfill?type=dev)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
