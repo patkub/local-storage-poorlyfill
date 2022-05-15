@@ -30,4 +30,7 @@ jobs:
     - run: npm run lint
     - run: npm run build
     - run: npm test
+    # Workaround to avoid Post Use step failures. See: https://github.com/actions/setup-node/issues/317
+    - run: mkdir -p /home/runner/.cache/yarn/v6
+      continue-on-error: true
     #- run: npm semantic-release
