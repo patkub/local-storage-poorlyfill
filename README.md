@@ -65,4 +65,3 @@ W3 Spec:
 MSDN:
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 - https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Local_storage
-
