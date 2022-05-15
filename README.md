@@ -2,8 +2,6 @@
 
 [![example workflow](https://github.com/patkub/local-storage-poorlyfill/actions/workflows/node.js.yml/badge.svg)](https://github.com/patkub/local-storage-poorlyfill/actions/workflows/node.js.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/patkub/local-storage-poorlyfill/badge.svg?targetFile=package.json)](https://snyk.io/test/github/patkub/local-storage-poorlyfill?targetFile=package.json)
-[![dependencies Status](https://david-dm.org/patkub/local-storage-poorlyfill/status.svg)](https://david-dm.org/patkub/local-storage-poorlyfill)
-[![devDependencies Status](https://david-dm.org/patkub/local-storage-poorlyfill/dev-status.svg)](https://david-dm.org/patkub/local-storage-poorlyfill?type=dev)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
