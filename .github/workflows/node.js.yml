@@ -30,4 +30,4 @@ jobs:
     - run: npm run lint
     - run: npm run build
     - run: npm test
-    - run: npm semantic-release
+    #- run: npm semantic-release
