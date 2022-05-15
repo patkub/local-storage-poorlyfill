@@ -33,4 +33,8 @@ jobs:
     # Workaround to avoid Post Use step failures. See: https://github.com/actions/setup-node/issues/317
     - run: mkdir -p /home/runner/.cache/yarn/v6
       continue-on-error: true
-    #- run: npm semantic-release
+    - name: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: npx semantic-release
