@@ -1,6 +1,6 @@
 # local-storage-poorlyfill
 
-[![Build Status](https://travis-ci.com/patkub/local-storage-poorlyfill.svg?branch=master)](https://travis-ci.com/patkub/local-storage-poorlyfill)
+[![example workflow](https://github.com/patkub/local-storage-poorlyfill/actions/workflows/node.js.yml/badge.svg)](https://github.com/patkub/local-storage-poorlyfill/actions/workflows/node.js.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/patkub/local-storage-poorlyfill/badge.svg?targetFile=package.json)](https://snyk.io/test/github/patkub/local-storage-poorlyfill?targetFile=package.json)
 [![dependencies Status](https://david-dm.org/patkub/local-storage-poorlyfill/status.svg)](https://david-dm.org/patkub/local-storage-poorlyfill)
 [![devDependencies Status](https://david-dm.org/patkub/local-storage-poorlyfill/dev-status.svg)](https://david-dm.org/patkub/local-storage-poorlyfill?type=dev)
