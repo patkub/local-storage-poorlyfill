@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 17.x, 18.x]
+        node-version: ['14.x', '16.x', '17.x', '18.x']
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v3
@@ -32,7 +32,7 @@ jobs:
     - run: mkdir -p /home/runner/.cache/yarn/v6
       continue-on-error: true
     - name: Semantic Release
-      if: ${{ matrix.node-version }} == 18.x
+      if: ${{ matrix.node-version == '18.x' }}
       uses: cycjimmy/semantic-release-action@v3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
