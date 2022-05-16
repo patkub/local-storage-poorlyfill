@@ -31,12 +31,8 @@ jobs:
     # Workaround to avoid Post Use step failures. See: https://github.com/actions/setup-node/issues/317
     - run: mkdir -p /home/runner/.cache/yarn/v6
       continue-on-error: true
-
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
     - name: Semantic Release
+      if: ${{ matrix.node-version }} == 18.x
       uses: cycjimmy/semantic-release-action@v3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
